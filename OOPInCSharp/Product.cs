@@ -8,42 +8,63 @@ namespace OOPInCSharp
 {
     internal class Product
     {
-        public string Name;
-        public double Price;
-        public int Amount;
+        public string _name;
+        public double _price;
+        public int _amount;
 
         public Product()
         {
-            Amount = 0;
+            _amount = 0;
         }
         public Product(string name, double price) : this()
         {
-            Name = name;
-            Price = price;
+            _name = name;
+            _price = price;
         }
 
         public Product(string name, double price, int amount) : this(name, price)
         { 
-            Amount = amount;
+            _amount = amount;
+        }
+
+        public string Get_name() {  return _name; }
+
+        public double Get_price() { return _price; }
+
+        public int Get_amount() { return _amount; }
+
+        public void SetName(string name)
+        {
+            _name = name;
+        }
+
+        public void SetPrice(double price)
+        {
+            _price = price;
+        }
+
+        public void SetAmount(int amount)
+        {
+            _amount = amount;
         }
 
         public double TotalValueInStock() {
-            return Price * Amount;
+            return _price * _amount;
         }
 
         public void AddProduct(int amount)
         {
-            Amount += amount;
+            _amount += amount;
         }
 
         public void RemoveProduct(int amount)
         {
-            Amount -= amount;
+            _amount -= amount;
         }
 
         public override string ToString()
         {
-            return $"Produto: {Name}, R$ {Price}, Quantidade: {Amount}, Valor Total no Estoque: {TotalValueInStock()}";
+            return $"Produto: {_name}, R$ {_price}, Quantidade: {_amount}, Valor Total no Estoque: {TotalValueInStock()}";
         }
     }
 }
