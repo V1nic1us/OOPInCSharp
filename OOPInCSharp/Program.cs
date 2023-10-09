@@ -24,9 +24,11 @@ namespace OOPInCSharp
 
             Console.WriteLine("Digite a quantidade para ser adicionado");
             amount = int.Parse(Console.ReadLine());
+            product.AddProduct(amount);
             PrintProduct(product);
             Console.WriteLine("Digite a quantidade para ser retirada");
             amount = int.Parse(Console.ReadLine());
+            product.RemoveProduct(amount);
             PrintProduct(product);
 
         }
