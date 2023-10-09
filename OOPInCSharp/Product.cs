@@ -12,10 +12,18 @@ namespace OOPInCSharp
         public double Price;
         public int Amount;
 
-        public Product(string name, double price, int amount) 
-        { 
+        public Product()
+        {
+            Amount = 0;
+        }
+        public Product(string name, double price) : this()
+        {
             Name = name;
             Price = price;
+        }
+
+        public Product(string name, double price, int amount) : this(name, price)
+        { 
             Amount = amount;
         }
 
